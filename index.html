@@ -1,128 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prakash Dey | Personal Website</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prakash Dey — Academic CV</title>
+  <meta name="description" content="Academic CV website for Prakash Dey — Junior Research Fellow in Computational Biology." />
+  <meta property="og:title" content="Prakash Dey — Academic CV" />
+  <meta property="og:description" content="Junior Research Fellow · Computational Biology · Network Science · Numerical Methods" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0f172a" />
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root{
+      --bg: #0b1020; /* dark slate */
+      --panel: #0f172a; /* slate-900 */
+      --text: #e5e7eb; /* gray-200 */
+      --muted: #94a3b8; /* slate-400 */
+      --accent: #60a5fa; /* blue-400 */
+      --chip: #1f2937; /* gray-800 */
+      --border: #243045;
+      --link: #93c5fd;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
     }
-
-    body {
-      font-family: "Segoe UI", sans-serif;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
+    .light{
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #2563eb;
+      --chip: #f1f5f9;
+      --border: #e2e8f0;
+      --link: #1d4ed8;
+      --shadow: 0 10px 30px rgba(2,6,23,.08);
     }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; background:var(--bg); color:var(--text); line-height:1.6}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:980px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;z-index:10;background:linear-gradient(to bottom, rgba(15,23,42,.95), rgba(15,23,42,.85));backdrop-filter:saturate(120%) blur(8px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .nav a.logo{font-weight:800;letter-spacing:.2px}
+    .nav .actions{display:flex;gap:10px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:var(--panel);color:var(--text);padding:8px 12px;border-radius:12px;box-shadow:var(--shadow)}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.small{padding:6px 10px;border-radius:10px}
+    main{padding-top:18px}
+    .hero{display:grid;grid-template-columns:1fr;gap:18px;background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:24px;box-shadow:var(--shadow);margin-top:16px}
+    .hero h1{font-size:clamp(26px,4vw,38px);margin:0 0 6px}
+    .subtitle{color:var(--muted);margin:0}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .chip{background:var(--chip);border:1px solid var(--border);padding:6px 10px;border-radius:999px;font-size:13px}
+    section{margin-top:26px}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:var(--shadow)}
+    h2{font-size:20px;margin:0 0 14px}
+    .grid{display:grid;gap:14px}
+    .two{grid-template-columns:repeat(2,1fr)}
+    .item{padding:12px 14px;border:1px dashed var(--border);border-radius:14px}
+    .split{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .role{font-weight:700}
+    .muted{color:var(--muted)}
+    ul{margin:8px 0 0 18px}
+    li{margin:6px 0}
+    footer{margin:28px 0 16px;text-align:center;color:var(--muted)}
+    .pill{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid var(--border);background:var(--chip);font-size:12px;margin-left:8px}
+    .stack{display:flex;flex-wrap:wrap;gap:8px}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:12px;padding:3px 7px;border-radius:8px;border:1px solid var(--border);background:var(--chip)}
 
-    header {
-      background-color: #0d47a1;
-      color: white;
-      padding: 1rem 2rem;
-      text-align: center;
+    /* Print / PDF */
+    @media print {
+      header, .actions, .nav, .btn#print, .theme{display:none !important}
+      body{background:#fff}
+      .container{max-width:100%;padding:0}
+      .hero, .card{box-shadow:none;border:1px solid #d1d5db}
     }
-
-    nav {
-      margin-top: 1rem;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 8px;
-    }
-
-    section {
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      margin-bottom: 1rem;
-      color: #0d47a1;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      background: #eee;
-      margin-top: 2rem;
-    }
-
-    a {
-      color: #0d47a1;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        margin: 1rem;
-      }
-
-      nav a {
-        display: block;
-        margin: 0.5rem 0;
-      }
+    /* Responsive */
+    @media (max-width: 780px){
+      .two{grid-template-columns:1fr}
     }
   </style>
+  <script>
+    // Theme toggle with localStorage
+    const applyTheme = (t) => {
+      if(t === 'light'){document.documentElement.classList.add('light')} else {document.documentElement.classList.remove('light')}
+      localStorage.setItem('theme', t);
+    }
+    const initTheme = () => {
+      const saved = localStorage.getItem('theme');
+      if(saved){applyTheme(saved)}
+    }
+    document.addEventListener('DOMContentLoaded', initTheme);
+  </script>
+  <!-- Structured data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Prakash Dey",
+    "jobTitle": "Junior Research Fellow",
+    "affiliation": {"@type":"Organization","name":"The Institute of Mathematical Sciences"},
+    "email": "mailto:deyprakash52@gmail.com",
+    "telephone": "+91-9073265630",
+    "knowsAbout": ["Computational Biology","Computational Physics","Network Science","Numerical Methods","Data Analysis"],
+    "url": "",
+    "sameAs": [
+      "https://github.com/yourusername",
+      "https://www.linkedin.com/in/yourusername"
+    ]
+  }
+  </script>
 </head>
 <body>
-
   <header>
-    <h1>Prakash Dey</h1>
-    <p>Researcher | Developer | Learner</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container nav">
+      <a class="logo" href="#top">Prakash Dey</a>
+      <div class="actions">
+        <a class="btn small" id="print" href="#" onclick="window.print();return false;" title="Save as PDF">Print / PDF</a>
+        <button class="btn small theme" onclick="applyTheme(document.documentElement.classList.contains('light')?'dark':'light')">Toggle Theme</button>
+        <a class="btn small" href="#contact">Contact</a>
+      </div>
+    </div>
   </header>
 
-  <div class="container">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Hello! I'm Prakash, a curious and passionate learner working in the field of Biophysics and Computational Biology.
-        I enjoy solving problems through coding and exploring the intersection of science and technology.
-      </p>
+  <main class="container" id="top">
+    <section class="hero">
+      <div>
+        <h1>Prakash Dey</h1>
+        <p class="subtitle">Junior Research Fellow · The Institute of Mathematical Sciences, Chennai, India</p>
+        <div class="chips" aria-label="research areas">
+          <span class="chip">Computational Biology</span>
+          <span class="chip">Computational Physics</span>
+          <span class="chip">Network Science</span>
+          <span class="chip">Numerical Simulations</span>
+          <span class="chip">Data-driven Modeling</span>
+          <span class="chip">Complex Systems</span>
+        </div>
+      </div>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Project 1:</strong> Description of your first project.</li>
-        <li><strong>Project 2:</strong> Description of your second project.</li>
-        <li><strong>Project 3:</strong> Description of your third project.</li>
-      </ul>
+    <section id="about" class="card">
+      <h2>About</h2>
+      <p>I am a Junior Research Fellow working in <strong>Computational Biology</strong> with broad interests across <strong>computational physics</strong>, <strong>network science</strong>, and <strong>numerical methods</strong>. I enjoy building reproducible analysis pipelines, translating theory into simulation, and presenting results with clarity.</p>
+      <div class="stack" style="margin-top:10px">
+        <span class="kbd">Python</span>
+        <span class="kbd">NumPy</span>
+        <span class="kbd">Pandas</span>
+        <span class="kbd">Matplotlib</span>
+        <span class="kbd">SciPy</span>
+        <span class="kbd">SymPy</span>
+        <span class="kbd">NetworkX</span>
+        <span class="kbd">Julia</span>
+        <span class="kbd">FORTRAN</span>
+        <span class="kbd">R</span>
+        <span class="kbd">Mathematica</span>
+        <span class="kbd">LaTeX</span>
+        <span class="kbd">Git</span>
+        <span class="kbd">Jupyter</span>
+        <span class="kbd">MATLAB</span>
+        <span class="kbd">Gnuplot</span>
+      </div>
     </section>
 
-    <section id="contact">
+    <section id="education" class="card">
+      <h2>Education</h2>
+      <div class="grid">
+        <div class="item">
+          <div class="split">
+            <div class="role">Ph.D. (JRF), Computational Biology <span class="pill">Aug 2024 – Present</span></div>
+            <div class="muted">The Institute of Mathematical Sciences · Chennai, India</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="split">
+            <div class="role">M.Sc. in Physics <span class="pill">Nov 2022 – May 2024</span></div>
+            <div class="muted">University of Hyderabad · Hyderabad, India</div>
+          </div>
+          <ul>
+            <li><strong>CGPA:</strong> 7.92/10</li>
+            <li><strong>Thesis:</strong> <em>Application of Network Science in Cosmology</em></li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="split">
+            <div class="role">B.Sc. in Physics <span class="pill">Jul 2018 – Sep 2021</span></div>
+            <div class="muted">University of Calcutta · Kolkata, India</div>
+          </div>
+          <ul>
+            <li><strong>CGPA:</strong> 7.76/10</li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="split">
+            <div class="role">Higher Secondary (MPC) <span class="pill">Jun 2016 – Jun 2018</span></div>
+            <div class="muted">Madhyamgram High School · India</div>
+          </div>
+          <ul><li><strong>Percentage:</strong> 76.6%</li></ul>
+        </div>
+        <div class="item">
+          <div class="split">
+            <div class="role">Secondary <span class="pill">Jan 2015 – May 2016</span></div>
+            <div class="muted">Barasat Mahatma Gandhi High School · India</div>
+          </div>
+          <ul><li><strong>Percentage:</strong> 81.7%</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="card">
+      <h2>Research Projects</h2>
+      <div class="grid">
+        <div class="item">
+          <div class="split">
+            <div class="role">Application of Network Science in Cosmology</div>
+            <div class="muted">M.Sc. Thesis · Jun 2023 – May 2024</div>
+          </div>
+          <ul>
+            <li>Investigated complex network analysis for <em>cosmic web</em> structures and connectivity patterns.</li>
+            <li>Computed clustering coefficients, centrality measures, and degree distributions for large-scale datasets.</li>
+            <li>Developed Python pipelines with Pandas, NumPy, NetworkX, and Matplotlib for analysis and visualization.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="card">
+      <h2>Skills</h2>
+      <div class="grid two">
+        <div class="item">
+          <div class="role">Programming & Tools</div>
+          <p>Python (Pandas, NumPy, Matplotlib, SciPy, SymPy, NetworkX), Julia, FORTRAN, R, Mathematica, LaTeX, Git, Jupyter Notebook</p>
+        </div>
+        <div class="item">
+          <div class="role">Scientific Software</div>
+          <p>MATLAB, Gnuplot</p>
+        </div>
+        <div class="item">
+          <div class="role">General Tools</div>
+          <p>Microsoft Word, Excel, PowerPoint; Adobe Photoshop, Lightroom</p>
+        </div>
+        <div class="item">
+          <div class="role">Soft Skills</div>
+          <p>Teamwork, Adaptability, Problem Solving, Emotional Intelligence</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="languages" class="card">
+      <h2>Languages</h2>
+      <p>Bengali (Native), English (Fluent), Hindi (Fluent)</p>
+    </section>
+
+    <section id="interests" class="card">
+      <h2>Hobbies & Interests</h2>
+      <p>Scientific problem-solving; Numerical puzzles (Sudoku, Crosswords); Nature photography; Cooking; Traveling</p>
+    </section>
+
+    <section id="contact" class="card">
       <h2>Contact</h2>
-      <p>You can reach me via email at <a href="mailto:newprakash99@gmail.com">newprakash99@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/newprakash99" target="_blank">github.com/newprakash99</a></p>
+      <div class="grid two">
+        <div class="item">
+          <div class="role">Email</div>
+          <p><a href="mailto:deyprakash52@gmail.com">deyprakash52@gmail.com</a></p>
+        </div>
+        <div class="item">
+          <div class="role">Phone</div>
+          <p><a href="tel:+919073265630">+91 90732 65630</a></p>
+        </div>
+        <div class="item">
+          <div class="role">GitHub</div>
+          <p><a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a></p>
+        </div>
+        <div class="item">
+          <div class="role">LinkedIn</div>
+          <p><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">linkedin.com/in/yourusername</a></p>
+        </div>
+      </div>
     </section>
-  </div>
 
-  <footer>
-    &copy; 2025 Prakash Dey. All rights reserved.
-  </footer>
+    <footer>
+      © <span id="year"></span> Prakash Dey · Built with vanilla HTML/CSS · <a href="#top">Back to top</a>
+    </footer>
+  </main>
 
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
